@@ -1,0 +1,339 @@
+﻿// page-1
+// page-1
+// page-1
+
+
+//deman
+[page="0001"], [page="0003"] {
+    & picture i.pi2 i:nth-of-type(4) {
+        width: 31em;
+        height: 24em;
+        background: $skin;
+        transform: translate(33.5em,10em) skewX(-30deg);
+        border-radius: 10% 10% 5% 5%;
+        border-top: 2em solid $stroke;
+        border-left: 2em solid $stroke;
+    }
+        //hair
+        & picture i.pi2 i:nth-of-type(4):after {
+            width: 10em;
+            height: 2em;
+            background: $stroke;
+            transform: translate(-3em,-3em) rotate(-20deg);
+            border-radius: 30%;
+            box-shadow: 1em 1em 0 $stroke;
+        }
+
+        & picture i.pi2 i:nth-of-type(4):before {
+            width: 14em;
+            height: 4em;
+            background: $stroke;
+            transform: translate(5.2em,-4.9em) skew(30deg) rotate(-8deg);
+            border-radius: 10%;
+            z-index: -1;
+        }
+
+    & picture i.pi2 i:nth-of-type(5) {
+        width: 20em;
+        height: 2em;
+        transform: translate(60em,6em) rotate(20deg);
+        border-radius: 10%;
+        box-shadow: -3em 3em 0 -2em $stroke;
+    }
+
+        & picture i.pi2 i:nth-of-type(5):before {
+            width: 25em;
+            height: 2em;
+            transform: rotate(11deg);
+            border-radius: 40%;
+        }
+
+        & picture i.pi2 i:nth-of-type(5):after {
+            width: 24em;
+            height: 2em;
+            transform: rotate(19deg);
+        }
+
+    & picture i.pi2 i:nth-of-type(6) {
+        width: 17em;
+        height: 2em;
+        transform: translate(65em,10em) rotate(50deg);
+        border-radius: 10%;
+    }
+
+        & picture i.pi2 i:nth-of-type(6):before {
+            width: 17em;
+            height: 2em;
+            transform: rotate(12deg);
+            border-radius: 40%;
+        }
+
+        & picture i.pi2 i:nth-of-type(6):after {
+            width: 6em;
+            height: 6em;
+            border-radius: 50%;
+        }
+
+    & picture i.pi2 i:nth-of-type(7) {
+        width: 17em;
+        height: 2em;
+        transform: translate(66em,10em) rotate(80deg);
+        border-radius: 10%;
+    }
+
+        & picture i.pi2 i:nth-of-type(7):before {
+            width: 19em;
+            height: 2em;
+            transform: rotate(12deg);
+            border-radius: 40%;
+        }
+
+        & picture i.pi2 i:nth-of-type(7):after {
+            width: 22em;
+            height: 2em;
+            transform: rotate(20deg);
+        }
+
+    & picture i.pi2 i:nth-of-type(8) {
+        width: 5em;
+        height: 25em;
+        background: rgba(0,0,0,0.05);
+        border-radius: 0 50% 0 0;
+        border-top: 3em solid $stroke;
+        border-right: 1.5em solid $stroke;
+        transform: translate(58em,9.1em) rotate(3deg);
+    }
+    //eyebrow
+    & picture i.pi2 i:nth-of-type(10) {
+        width: 10em;
+        height: 2em;
+        background: $stroke;
+        transform: translate(41em,25em) skew(30deg) rotate(15deg);
+        border-radius: 2em;
+    }
+
+        & picture i.pi2 i:nth-of-type(10):before {
+            width: 9em;
+            height: 2em;
+            border-radius: 1.5em;
+            background: $stroke;
+            transform: translate(-10em,2em) rotate(-20deg);
+        }
+    //eye
+    & picture i.pi2 i:nth-of-type(11) {
+        width: 2em;
+        height: 3em;
+        left: 41em;
+        top: 30em;
+        border-radius: 50% .5em 50% 50%;
+        background: $stroke;
+        animation: blink 9s infinite;
+        transform: scaleY(1) translateZ(2px);
+    }
+
+        & picture i.pi2 i:nth-of-type(11):before {
+            width: 2.5em;
+            height: 1em;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            background: $stroke;
+        }
+
+        & picture i.pi2 i:nth-of-type(11):after {
+            width: 2em;
+            height: 2.5em;
+            margin: auto;
+            border-radius: 50% .5em 50% 50%;
+            background: $stroke;
+            transform: translate(-10em,.25em);
+        }
+    //nose
+    & picture i.pi2 i:nth-of-type(9) {
+        width: 13em;
+        height: 16em;
+        transform: translate(31em,28em) skew(-28deg) rotate(0deg);
+        border-radius: 3em;
+        background: $skin;
+        border: 1.5em solid $stroke;
+        border-top: none;
+    }
+
+        & picture i.pi2 i:nth-of-type(9):before {
+            width: 15em;
+            height: 14em;
+            left: 50%;
+            top: -20%;
+            background: $skin;
+            transform: rotate(30deg);
+        }
+
+        & picture i.pi2 i:nth-of-type(9):after {
+            width: 14em;
+            height: 13em;
+            background: $skin;
+            transform: translate(-5em,-1em) rotate(-40deg) translateZ(-1px);
+            border-left: 1.3em solid $stroke;
+            border-radius: 1.5em;
+        }
+    //lip
+    & picture i.pi2 i:nth-of-type(3) {
+        width: 10em;
+        height: 14em;
+        transform: translate(30em,40em) skew(-5deg) rotate(-10deg);
+        background: $skin;
+        border: 1.5em solid $stroke;
+        border-top-color: rgba(0,0,0,0);
+        border-right-color: rgba(0,0,0,0);
+        border-radius: 1em;
+    }
+
+        & picture i.pi2 i:nth-of-type(3):before {
+            width: 13em;
+            height: 14em;
+            transform: translate(6em,-4em) rotate(20deg);
+            background: $skin;
+            border-radius: 1em;
+        }
+
+        & picture i.pi2 i:nth-of-type(3):after {
+            width: 7em;
+            height: 12em;
+            transform: translate(4em,12em) skew(15deg);
+            background: $skin;
+            border-left: 1.7em solid $stroke;
+            border-radius: 0 0 50% 0;
+        }
+
+    & picture i.pi2 i:nth-of-type(1) {
+        width: 10em;
+        height: 10em;
+        background: $skin;
+        transform: translate(37em,45em);
+    }
+    //ear
+    & picture i.pi2 i:nth-of-type(12) {
+        width: 12em;
+        height: 15em;
+        transform: translate(51.5em,30em) skew(-5deg) rotate(10deg);
+        background: $skin;
+        border: 1.5em solid $stroke;
+        border-bottom-color: rgba(0,0,0,0);
+        border-left-color: rgba(0,0,0,0);
+        border-radius: 10em 5em 12em 0;
+    }
+
+    & picture i.pi2 i:nth-of-type(13) {
+        width: 10em;
+        height: 15em;
+        transform: translate(41em,42em) rotate(15deg);
+        background: $skin;
+        border-right: 1.5em solid $stroke;
+    }
+
+        & picture i.pi2 i:nth-of-type(13):before {
+            width: 9em;
+            height: 11em;
+            transform: translate(10em,-11em) rotate(50deg);
+            background: $skin;
+            border-right: 1.7em solid $stroke;
+            transform-origin: 0 0;
+            border-radius: 1em;
+            border-bottom: none;
+        }
+
+        & picture i.pi2 i:nth-of-type(13):after {
+            width: 10em;
+            height: 5em;
+            transform: translate(-1em,11em) skew(10deg) rotate(-10deg);
+            background: $skin;
+            border-right: 1.7em solid $stroke;
+            transform-origin: 0 0;
+            border-bottom: none;
+            opacity:0;
+        }
+}
+
+//shadows
+
+[page="0001"], [page="0003"] {
+    & picture i.pi3 i:nth-of-type(1) {
+        width: 9em;
+        height: 23em;
+        background: rgba(40,10,0,0.05);
+        transform: translate(54em,10em) skew(-20deg);
+        border-radius: 0 0 2em 0;
+    }
+
+        & picture i.pi3 i:nth-of-type(1):before {
+            width: 9em;
+            height: 25em;
+            background: rgba(40,10,0,0.05);
+            background: linear-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0));
+            transform: rotate(-10deg);
+            transform: translate(-1.5em,35em) rotate(-10deg);
+        }
+
+        & picture i.pi3 i:nth-of-type(1):after {
+            width: 15em;
+            height: 13em;
+            transform: translate(-4em,22em) skew(-5deg) rotate(-10deg);
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.05));
+            background: rgba(40,10,0,0.05);
+            border-radius: 10em 5em 12em 0;
+        }
+
+    & picture i.pi3 i:nth-of-type(2) {
+        width: 3em;
+        height: 23em;
+        background: rgba(40,10,0,0.05);
+        transform: translate(58em,10em) skew(-20deg);
+        border-radius: 0 0 2em 0;
+    }
+
+        & picture i.pi3 i:nth-of-type(2):before {
+            width: 6em;
+            height: 25em;
+            background: rgba(40,10,0,0.05);
+            background: linear-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0));
+            transform: translate(-1.5em,35em) rotate(-10deg);
+        }
+
+        & picture i.pi3 i:nth-of-type(2):after {
+            width: 15em;
+            height: 13em;
+            transform: translate(-4em,22em) skew(-5deg) rotate(-10deg);
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.05));
+            background: rgba(40,10,0,0.05);
+            border-radius: 10em 5em 12em 0;
+        }
+}
+
+[page="0001"] {
+    & background .bi0 i:nth-of-type(1) {
+        width: 100%;
+        height: 70em;
+        background: #896776;
+        transform: translateZ(-10px);
+    }
+
+        & background .bi0 i:nth-of-type(1):before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5fadaf,rgba(0,0,0,0) );
+            opacity: 0;
+        }
+
+        & background .bi0 i:nth-of-type(1):after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5fadaf,#f39e66,#B56554, rgba(0,0,0,0) );
+            opacity: 1;
+        }
+
+    & background .bi1 i, & background .bi1 i:before, & background .bi1 i:after {
+        background: #6B5365;
+    }
+}

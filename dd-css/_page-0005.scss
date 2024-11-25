@@ -1,0 +1,383 @@
+﻿// page-5
+// page-5
+// page-5
+
+
+//page stuff
+
+[page="0005"], [page="0006"], [page="0007"] {
+    & background .bi2 {
+        transform: skewY(3deg) scale(.95) translate(20em,-20em);
+    }
+
+    & background .bi1 {
+        transform: translate(10em,-10em);
+    }
+
+    & background .bi0 {
+        transform: translate(5em,-5em);
+    }
+}
+
+[page="0005"], [page="0006"]{
+    & foreground i {
+        transform: scale(3) translateY(10vh);
+    }
+    }
+    [page="0005"], [page="0006"], [page="0007"] {
+    //road
+    & background .bi2 i:nth-of-type(15) {
+        background: linear-gradient( #483343, #2D2234);
+    }
+
+        & background .bi2 i:nth-of-type(15):before {
+            background: linear-gradient( #30222d, #2D2234);
+        }
+
+        & background .bi2 i:nth-of-type(15):after {
+            background: $body;
+            opacity: .7;
+            box-shadow: 0 3em 0 $body50, 0 4em 4em 4em $body50;
+        }
+    //background
+    & background > * {
+        opacity: .8;
+        transform: scale(1.1);
+    }
+
+    & background .bi0 i:nth-of-type(1) {
+        width: 100%;
+        height: 70em;
+        background: #7a8986;
+        transform: translateZ(-100px);
+    }
+
+        & background .bi0 i:nth-of-type(1):before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#210057, rgba(0,0,0,0) );
+            opacity: 1;
+        }
+
+        & background .bi0 i:nth-of-type(1):after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgb(101, 98, 125), rgba(0,0,0,0) );
+            opacity: 0;
+        }
+    //grass
+    & background .bi1 i, & background .bi1 i:before, & background .bi1 i:after {
+        background: #442B0E;
+    }
+}
+
+//near arm
+
+[page="0005"], [page="0006"], [page="0007"] {
+    //upper arm
+    & picture i.pi1 i:nth-of-type(5) {
+        width: 14em;
+        height: 20em;
+        transform: translate(52em,72em) rotate(0deg) translateZ(4px);
+        background: $skin;
+        border-radius: 3em;
+        border-left: 1.6em solid $stroke;
+        border-right: 1.4em solid $stroke;
+    }
+        //forearm
+        & picture i.pi1 i:nth-of-type(5):before {
+            width: 8.5em;
+            height: 25em;
+            transform: translate(0em,20em) rotate(13deg) translateZ(-1px) skewY(0deg);
+            background: $skin;
+            border-radius: 3em;
+            border-left: 1.6em solid $stroke;
+            border-right: 1.4em solid $stroke;
+            transform-origin: 100% 0;
+        }
+        /*& picture i.pi1 i:nth-of-type(5):after {
+        width: 4em;
+        height: 5em;
+        transform: translate(6em,42em) rotate(-10deg) translateZ(-1px) skewY(20deg);
+        background: $skin;
+        border-radius: 3em;
+        border-top: 1.3em solid $stroke;
+        border-right: 1.4em solid $stroke;
+    }*/
+        //hand
+        & picture i.pi1 i:nth-of-type(5):after {
+            width: 8em;
+            height: 9em;
+            transform: translate(-10em, 40em) rotate(10deg) translateZ(-2px) skew(-20deg);
+            background: $skin;
+            border-radius: 3em;
+            border: 1.3em solid $stroke;
+        }
+
+    & picture i.pi1 i:nth-of-type(6) {
+        width: 11em;
+        height: 10em;
+        transform: translate(46em, 114em) rotate(15deg) translateZ(2px) skewY(-20deg);
+        background: $skin;
+        border-radius: 3em 0 3em 0;
+        border-top: 1.3em solid $none;
+        border-right: 1.4em solid $stroke;
+        border-left: 1.4em solid $stroke;
+    }
+
+        & picture i.pi1 i:nth-of-type(6):before {
+            width: 10em;
+            height: 5em;
+            transform: translate(-4em, 4em) rotate(15deg) translateZ(-1px) skewY(-20deg);
+            background: #cab4a1;
+            border-radius: 4em;
+            border: 1.3em solid #190d23;
+        }
+
+    picture i.pi1 i:nth-of-type(9):before {
+        width: 5em;
+        height: 27em;
+        transform: translate(10em, 6em) rotate(-3deg) translateZ(4px) skewY(45deg);
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 0 2em 2em 2em;
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+    picture i.pi1 i:nth-of-type(9):after {
+        width: 5em;
+        height: 35em;
+        transform: translate(6em, 31em) rotate(11deg) translateZ(4px) skewY(-45deg);
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 1em;
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
+
+[page="0005"], [page="0006"], [page="0007"] {
+
+    & picture i.pi0 i:nth-of-type(1) {
+        width: 25em;
+        height: 28em;
+        transform: translate(25em,100em) rotate(-20deg) translateZ(0px);
+        background: #294748;
+        border-left: 1.2em solid $stroke;
+        transform-origin: 0 0;
+    }
+
+        & picture i.pi0 i:nth-of-type(1):before {
+            width: 10em;
+            height: 30em;
+            transform: translate(20em, 20em) rotate(17deg);
+            background: #294748;
+            border-right: 1.2em solid $stroke;
+            transform-origin: 0 0;
+        }
+
+        & picture i.pi0 i:nth-of-type(1):after {
+            width: 10em;
+            height: 19em;
+            transform: translate(14em, 40em) rotate(15deg);
+            background: #294748;
+            border-right: 1.2em solid $stroke;
+            transform-origin: 0 0;
+        }
+
+    & picture i.pi0 i:nth-of-type(2) {
+        width: 10em;
+        height: 20em;
+        transform: translate(51em,131em) rotate(-20deg);
+        background: #294748;
+        border-left: 1.2em solid $stroke;
+    }
+
+        & picture i.pi0 i:nth-of-type(2):before {
+            width: 10em;
+            height: 13em;
+            transform: translate(-3em,-13em) rotate(-10deg);
+            background: #294748;
+            border-left: 1.2em solid $stroke;
+        }
+
+        & picture i.pi0 i:nth-of-type(2):after {
+            width: 7em;
+            height: 5em;
+            transform: translate(-8em,-17em) rotate(13deg);
+            background: #294748;
+            border-bottom: 1.2em solid $stroke;
+            border-radius: 50%;
+        }
+    //left leg
+    & picture i.pi0 i:nth-of-type(3) {
+        width: 15em;
+        height: 22em;
+        transform: translate(33em,124em) rotate(9deg) translateZ(-1px);
+        background: #294748;
+        border-left: 1.5em solid $stroke;
+        border-right: 1.5em solid $stroke;
+    }
+
+        & picture i.pi0 i:nth-of-type(3):before {
+            width: 12em;
+            height: 17em;
+            transform: translate(0em,20em) rotate(-15deg) translateZ(2px) skewX(-5deg);
+            background: #294748;
+            border-left: 1.5em solid $stroke;
+            border-right: 1.5em solid $stroke;
+        }
+
+    & picture i.pi0 i:nth-of-type(4) {
+        width: 17em;
+        height: 5em;
+        transform: translate(31em, 160em) rotate(3deg) translateZ(1px) skewX(-8deg);
+        background: #294748;
+        border: 1.3em solid $stroke;
+    }
+    // left shoe
+    & picture i.pi0 i:nth-of-type(5) {
+        width: 27em;
+        height: 10em;
+        transform: translate(19em,162em) translateZ(0px) skewX(-15deg) rotate(-12deg);
+        background: #302824;
+        border: 1.1em solid $stroke;
+        border-radius: 4em 2em 1em 3em;
+    }
+
+        & picture i.pi0 i:nth-of-type(5):before {
+            width: 7em;
+            height: 7em;
+            transform: translate(6em,-2em) translateZ(5px) skewX(15deg) rotate(45deg);
+            background: #302824;
+            border-top: 1.4em solid $stroke;
+            border-radius: 50%;
+        }
+    /*& picture i.pi0 i:nth-of-type(5):after {
+            width: 4em;
+            height: 6em;
+            left: 4px;
+            top: 0em;
+            transform: translateZ(6px) skewX(15deg) rotate(-45deg);
+            border-right: 1.2em solid $stroke;
+            border-radius: 50%;
+        }*/
+    //right leg
+    & picture i.pi0 i:nth-of-type(6) {
+        width: 10em;
+        height: 17em;
+        transform: translate(54em,150em) rotate(-5deg) translateZ(2px) skewX(-5deg);
+        background: #294748;
+        border-left: 1.5em solid $stroke;
+    }
+
+        & picture i.pi0 i:nth-of-type(6):before {
+            width: 7em;
+            height: 19em;
+            transform: translate(5em,-2em) rotate(-12deg) translateZ(1px) skewX(8deg);
+            background: #294748;
+            border-right: 1.3em solid $stroke;
+        }
+
+        & picture i.pi0 i:nth-of-type(6):after {
+            width: 17em;
+            height: 3em;
+            transform: translate(-2em,16em) rotate(-1deg) translateZ(1px) skewX(-8deg);
+            background: #294748;
+            border: 1.1em solid $stroke;
+        }
+    // right shoe
+    & picture i.pi0 i:nth-of-type(7) {
+        width: 17em;
+        height: 22em;
+        transform: translate(52em,164em) translateZ(0px) skewX(-20deg) rotate(10deg);
+        background: #302824;
+        border: 1.3em solid $stroke;
+        border-radius: 6em;
+    }
+
+        & picture i.pi0 i:nth-of-type(7):before {
+            width: 7em;
+            height: 7em;
+            transform: translate(4em,4em) translateZ(5px) skewX(10deg);
+            background: #302824;
+            border-top: 1.2em solid $stroke;
+            border-radius: 50%;
+        }
+
+        & picture i.pi0 i:nth-of-type(7):after {
+            width: 10em;
+            height: 7em;
+            transform: translate(2em,12em) translateZ(1px) skewX(10deg);
+            border-top: 1.2em solid $stroke;
+            border-radius: 50%;
+        }
+    //shadows
+    & picture i.pi0 i:nth-of-type(8) {
+        width: 8em;
+        height: 25em;
+        transform: translate(37em,120em) rotate(-20deg) translateZ(-1px) skewY(-60deg);
+        background: rgba(0,0,0,0.25);
+        transform-origin: 0 0;
+    }
+
+        & picture i.pi0 i:nth-of-type(8):before {
+            width: 10em;
+            height: 25em;
+            background: rgba(0,0,0,0.15);
+            transform-origin: 0 0;
+            transform: translate(8em, 12em) rotate(60deg) skewY(0deg) translateZ(2px);
+        }
+
+    & picture i.pi0 i:nth-of-type(9) {
+        width: 5em;
+        height: 76em;
+        transform: translate(58em,110em) translateZ(5px) rotate(-1deg);
+        background: rgba(0,0,0,0.1);
+        transform-origin: 0 0;
+        border-radius: 0 0 5em 0;
+    }
+
+        & picture i.pi0 i:nth-of-type(9):before {
+            width: 0;
+            height: 0;
+            transform: translate(-8em,0em);
+            transform-origin: 0 0;
+            border: 6.5em solid rgba(0,0,0,0.1);
+            border-bottom-color: rgba(0,0,0,0);
+            border-left-color: rgba(0,0,0,0);
+            border-top-width: 25em;
+        }
+
+        & picture i.pi0 i:nth-of-type(9):after {
+            width: 0;
+            height: 0;
+            transform: translate(5em,35em);
+            transform-origin: 0 0;
+            border: 23em solid rgba(0,0,0,0);
+            border-left: 8em solid rgba(0,0,0,0.15);
+            border-bottom-width: 16em;
+        }
+
+    & picture i.pi0 i:nth-of-type(10) {
+        width: 200em;
+        height: 30em;
+        transform: translate(25em,150em) rotate(10deg) translateZ(-1px);
+        background: rgba(0,0,0,0.1);
+        transform-origin: 0 0;
+        border-radius: 50%;
+    }
+
+        & picture i.pi0 i:nth-of-type(10):after {
+            width: 200em;
+            height: 50em;
+            transform: translate(10em,-10em) rotate(15deg) translateZ(-1px);
+            background: rgba(0,0,0,0.1);
+            transform-origin: 0 0;
+            border-radius: 50%;
+        }
+}
+
+/*[page="0005"] {
+    & picture > * {
+        transform: scale(.5);
+        transform-origin: 50% 0;
+    }
+}*/

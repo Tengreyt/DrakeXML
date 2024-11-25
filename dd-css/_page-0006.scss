@@ -1,0 +1,59 @@
+﻿// page-6
+// page-6
+// page-6
+
+
+
+//page stuff
+
+
+
+
+/*[page="0005"] {
+    & picture > * {
+        transform: scale(.5);
+        transform-origin: 50% 0;
+    }
+}*/
+
+
+[page="0006"], [page="0007"] {
+    & picture i.pi2 i:nth-of-type(3) {
+        width: 10em;
+        height: 14em;
+        transform: translate(26em,40em) skewY(25deg) rotate(-20deg);
+        background: $skin;
+        border: 1.5em solid $stroke;
+        border-top-color: rgba(0,0,0,0);
+        border-right-color: rgba(0,0,0,0);
+        border-radius: 1em;
+    }
+
+        & picture i.pi2 i:nth-of-type(3):before {
+            width: 15em;
+            height: 14em;
+            transform: translate(6em,-5em) rotate(20deg) skewY(-25deg);
+            background: $skin;
+            border-radius: 1em;
+        }
+
+        & picture i.pi2 i:nth-of-type(3):after {
+            width: 7em;
+            height: 10em;
+            transform: translate(4em,12.5em) skew(20deg);
+            background: $skin;
+            border-left: 1.7em solid $stroke;
+            border-radius: 0 0 7em 0;
+        }
+}
+//v-neck
+[page="0006"], [page="0007"] {
+    picture i.pi2 i:nth-of-type(2) {
+        width: 12em;
+        height: 12em;
+        transform: translate(38em,54em) rotate(-15deg) skewY(-50deg);
+        background: $skin;
+        border-bottom: 2em solid $stroke;
+        border-left: 1.5em solid $stroke;
+    }
+}

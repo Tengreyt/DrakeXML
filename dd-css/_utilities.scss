@@ -1,0 +1,307 @@
+﻿
+// _utilities.scss
+
+$spacer:   1em !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($spacer-x * 1),
+    y: ($spacer-y * 1)
+  ),
+  2: (
+    x: ($spacer-x * 2),
+    y: ($spacer-y * 2)
+  ),
+  3: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  ),
+  4: (
+    x: ($spacer-x * 4),
+    y: ($spacer-y * 4)
+  ),
+  5: (
+    x: ($spacer-x * 5),
+    y: ($spacer-y * 5)
+  ) ) !default;
+
+.m-x-auto {
+  margin-right: auto;
+  margin-left:  auto;
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+   $length-x:   map-get($lengths, x);
+    $length-y:   map-get($lengths, y);
+
+    .#{$abbrev}-#{$size} { #{$prop}: $length-y $length-x }
+    .#{$abbrev}-t-#{$size} { #{$prop}-top: $length-y }
+    .#{$abbrev}-r-#{$size} { #{$prop}-right: $length-x }
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y }
+    .#{$abbrev}-l-#{$size} { #{$prop}-left: $length-x }
+
+    // Axes
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right: $length-x ;
+      #{$prop}-left: $length-x ;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top: $length-y ;
+      #{$prop}-bottom: $length-y ;
+    } } }
+
+// responsive font
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min!important;
+  }
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max!important;
+    }
+  }
+  @if $fallback {
+    font-size: $fallback!important;
+  }
+  font-size: $responsive!important;
+}
+.rfont {
+  @include responsive-font(2vmin, 12px, 18px);
+}
+
+.d-inline-block{
+    display:inline-block;
+    vertical-align:top;
+}
+.w-auto{
+    width:auto;
+}
+.w-25{
+    width:25%;
+}
+.w-50{
+    width:50%;
+}
+.width-100, .full-width, .w-100{
+    width:100%;
+}
+.max-300{
+    max-width:300px;
+}
+.min-100{
+    min-width:100px;
+}
+.min-150{
+    min-width:150px;
+}
+.w-100-50-sm{
+    width:100px;
+}
+.mw{
+    max-width:200px;
+    overflow:hidden;
+}
+
+.w100-50-down{
+    width:100px;
+}
+.z--1{
+    z-index:-1;
+}
+
+/* ^ Can be replaced by Bootstrap 4 ^ */
+
+.d-table, .d-true-table{
+    display:table;
+}
+.d-table>*, .d-table-row>*{
+    display:table-cell;
+    vertical-align:middle;
+}
+.d-table-row{
+    display:table-row;
+}
+.d-table-sm>*, .d-flex-sm, .d-block{
+    display:block;
+}
+.d-flex, .d-flex-v-align, .d-flex-control {
+    display: flex;
+}
+.d-flex>*, .flex-grow-1{
+    flex-grow: 1;
+}
+.d-flex-control{
+    flex-wrap: wrap;
+}
+.flex1{
+    flex:1;
+}
+.flex-grow-0{
+    flex-grow: 0
+}
+.flex-shrink-0{
+    flex-shrink: 0
+}
+.d-flex-v-align{
+    align-items:stretch;
+}
+.d-flex-v-align>*{
+    margin:auto;
+}
+.flex-height {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.v-align-t, .align-top, .table.v-align-t>tbody>tr>td {
+    vertical-align:top;
+}
+.v-align-m, .align-middle{
+    vertical-align:middle;
+}
+.v-align-b{
+    vertical-align:bottom;
+}
+.br{
+    border-radius:$spacer;
+}
+.br-t{
+    border-radius:$spacer $spacer 0 0;
+}
+.br-b{
+    border-radius:0 0 $spacer $spacer;
+}
+.br-0{
+    border-radius:0;
+}
+
+.fixed{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+
+.relative, .square{
+    position:relative;
+}
+.overflow-hidden{
+    overflow:hidden;
+}
+small{
+    font-size: 80%!important;
+}
+.font-weight-normal{
+    font-weight: normal !important;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.border-l{
+    border-left:1px solid rgba(0,0,0,0.1);
+}
+.border-r{
+    border-right:1px solid rgba(0,0,0,0.1);
+}
+.no-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.square:before, .circle:before, [class^="circle-"]:before, [class*=" circle-"]:before{
+    content:'';
+    padding-top:100%;
+    display:block;
+}
+.square>*, .abs-center, .circle>*, [class^="circle-"]>*, [class*=" circle-"]>*, [class^="circle-"]>*>*, [class*=" circle-"]>*>*{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+.op0, .op-0{
+    opacity:0;
+}
+.op025, .op-025{
+    opacity:.25;
+}
+.op05, .op-05{
+    opacity:.5;
+}
+.op09, .op-09{
+    opacity:.8;
+}
+.line-height-1{
+    line-height:1!important;
+}
+.shadow-b-10, .shadow-t-10{
+    box-shadow:0 10px 0 0 rgba(0,0,0,0.1);
+    z-index:999;
+    position:relative;
+}
+.shadow-t-10{
+    box-shadow:10px 0 0 0 rgba(0,0,0,0.1);
+}
+
+.break-word{
+    word-wrap : break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/*colours*/
+/*colours*/
+/*colours*/
+
+.bg-white{
+    background-color:#fff;
+}
+.bg-dark-025{
+    background-color:rgba(0,0,0,0.025);
+}
+.bg-dark-05, .btn-default{
+    background-color:rgba(0,0,0,0.05);
+}
+.bg-grad-dark-05{
+    background:linear-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0));
+}
+.bg-dark-2{
+    background-color:rgba(0,0,0,0.2)!important;
+}
+.bg-dark-1{
+    background-color:rgba(0,0,0,0.1)!important;
+}
+.bg-light-75{
+    background-color:rgba(255,255,255,.75);
+}
+.bg-light-95{
+    background-color:rgba(255,255,255,.95);
+}
+.bg-grey{
+    background:#F3F3F3;
+}
+.hide {
+  display:none;
+}
+.text-center {
+  text-align:center;
+}

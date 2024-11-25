@@ -1,0 +1,68 @@
+﻿// page-3
+// page-3
+// page-3
+
+//page stuff
+
+[page="0003"], [page="0004"] {
+    & picture > * {
+        transform: scale(.5);
+        transform-origin: 50% 0;
+    }
+}
+
+//background
+
+/*[page="0003"] background > * {
+    opacity: .7;
+    transform:scale(1);
+}
+
+[page="0003"] background i i:nth-of-type(1){
+    width:100%;
+    height:70em;
+    background:linear-gradient(#EBEBCA,#EC821B );
+}*/
+/*[page="0003"] background i i, [page="0003"] background i i:before ,[page="0003"] background i i:after{
+    background:#A43F1B;
+}*/
+
+[page="0003"], [page="0004"] {
+    & background .bi2 {
+        transform: skewY(-2deg) scale(1);
+    }
+}
+
+[page="0003"], [page="0004"] {
+
+    & background > * {
+        opacity: .8;
+        transform: scale(1.1);
+    }
+
+    & background .bi0 i:nth-of-type(1) {
+        width: 100%;
+        height: 70em;
+        background: #a4846d;
+        transform: translateZ(-100px);
+    }
+
+        & background .bi0 i:nth-of-type(1):before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5F3D6F, rgba(0,0,0,0) );
+            opacity: 0;
+        }
+
+        & background .bi0 i:nth-of-type(1):after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgb(101, 98, 125), rgba(0,0,0,0) );
+            opacity: 1;
+        }
+
+    & background .bi1 i, & background .bi1 i:before, & background .bi1 i:after {
+        background: #453541;
+    }
+}
+

@@ -1,0 +1,270 @@
+﻿
+$animate: all .25s ease-in-out;
+//colours
+$body: #190d23;
+$rail: #190d23;
+$stroke: #190d23;
+$body50: rgba($body, .5);
+$shadow: #1d2049;
+$skin: #efd4c6;
+$top: #8E7A5D;
+$radius: 1em;
+$tree1: #683f44;
+$tree2: #20112a;
+$tree3: #444a2f;
+$tree4: #23241a;
+$horizon: #1d2049;
+$none: rgba(0,0,0,0);
+$dark: rgba(0,0,0,0.25);
+body * {
+    box-sizing: border-box;
+    display: block;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Patua One', cursive;
+    color: $body;
+    background: #EBEBCA;
+    line-height: 1.7em;
+    font-size: 1vmin;
+}
+/*body:after {
+    content: '';
+    position: fixed;
+    top: -100px;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0, .5);
+    z-index: 1;
+}*/
+html, body, main {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+}
+main {
+    flex-grow: 1;
+}
+row {
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+text, picture {
+    width: 100%;
+}
+picture {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+picture:before {
+    content: '';
+    padding-top: 100%;
+    display: block;
+}
+picture *, picture *:before, picture *:after, background *,
+background *:before, background *:after, foreground *, foreground *:before, foreground *:after {
+    position: absolute;
+    content: '';
+}
+picture *, picture *:before, picture *:after, background *, background *:before, background *:after, foreground *, foreground *:before, foreground *:after {
+    top: 0;
+    left: 0;
+}
+picture, background, foreground, text {
+    perspective: 5000px;
+    perspective-origin: 50% 50%;
+}
+picture, picture *, foreground, foreground *, background, background *, text, page {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+picture > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+picture > *, background > *, foreground > * {
+    width: 100%;
+    height: 100%;
+}
+body {
+    & background .bi0 {
+        transform: translateZ(-12px);
+    }
+    & background .bi1 {
+        transform: translateZ(-11px);
+    }
+    & background .bi2 {
+        transform: translateZ(-10px);
+    }
+    & picture i.pi0 {
+        transform: translateZ(-5px);
+    }
+    & picture i.pi1 {
+        transform: translateZ(1px);
+    }
+    & picture i.pi2 {
+        transform: translateZ(12px);
+    }
+    & picture i.pi3 {
+        transform: translateZ(13px);
+    }
+    & text{
+        transform:translateZ(100px);
+    }
+}
+/*resets*/
+p {
+    margin: 0 0 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: inherit;
+    box-shadow: inset 0 0 0 0 rgba(0,0,0,0), 0 0 0 30px rgba(0,0,0,0);
+    transition: $animate;
+    display: inline-block;
+    border-radius: $radius;
+}
+a:hover {
+    box-shadow: inset 0 0 0 60px rgba(0,0,0,0.2), 0 0 0 5px rgba(0,0,0,0.2);
+}
+/*page {
+    opacity: 0;
+}*/
+/*#page0, #page1 {
+    display: none;
+}*/
+column {
+    scroll-snap-type: y mandatory;
+}
+text {
+    position: relative;
+    z-index: 100;
+    /*overflow:hidden;*/
+}
+page {
+    scroll-snap-align: start;
+}
+//other pages
+.not-story:before {
+    background: rgba(245,245,245,.5) !important;
+}
+.not-story:after {
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+.not-story-dark:before {
+    background: rgba(245,245,245,.8) !important;
+}
+//last page
+page#pagex {
+    &:before, &:after {
+        transform: rotate(0) !important;
+    }
+    &:after {
+        height: calc(100% - 2em) !important;
+    }
+    &, &:before, &:after {
+        border-radius: 1em 1em 0 0 !important;
+    }
+}
+//about
+about {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+about a {
+    width: 1.5em;
+    height: 1.5em;
+    background: #fff;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    opacity: .5;
+    cursor: pointer;
+}
+about a + a {
+    transform: scale(0);
+}
+abouttext {
+    transform: scaleY(0);
+    transition: $animate;
+    transform-origin: 100% 0;
+}
+about a:first-of-type:focus ~ abouttext {
+    transform: scaleY(1);
+}
+about a:focus {
+    transform: scale(0);
+}
+about a:focus + a {
+    transform: scale(1);
+}
+.not-top about a {
+    transform: scale(0) rotate(360deg);
+    box-shadow: inset 0 0 0 0 rgba(0,0,0,0.2), 0 0 0 30px rgba(0,0,0,0.5);
+}
+//copyright
+a[copyright] {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    transform: translate(0, 132px) rotate(-90deg);
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 100;
+    z-index: 99999999999;
+    transform-origin: left top 0;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color:#fff!important;
+    box-shadow:none!important;
+}
+.pageload picture {
+    opacity: 0;
+}
+picture {
+    opacity: 1;
+    transition: $animate;
+}
+testtop, testbottom, testdiv{
+    background:red;
+    height:1px;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+[scrolling="true"] *, [scrolling="true"] *:before, [scrolling="true"] *:after{
+    animation-play-state:paused!important;
+     /*-webkit-box-reflect:unset!important;*/
+}
+
+@keyframes more {
+    100% {
+        transform: scaleY(1) translateY(10px);
+    }
+}
+@keyframes more2 {
+    100% {
+        transform: scaleY(-1) translateY(110px);
+    }
+}

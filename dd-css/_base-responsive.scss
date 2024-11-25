@@ -1,0 +1,110 @@
+﻿@media (orientation:landscape) {
+    .pull-right-lg {
+        float: right;
+    }
+    .flex-end {
+        justify-content: flex-end;
+    }
+    .col-2 {
+        width: 50%;
+    }
+    .col-2 > * {
+        max-width: 700px;
+    }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex > * {
+        flex: 1;
+    }
+    row {
+        flex-direction: row-reverse;
+    }
+    .flex-column {
+        flex-direction: column;
+    }
+    body:not(.pageload) {
+        & picture,
+        & picture *,
+        & picture *:before,
+        & picture *:after,
+        & background,
+        & background *,
+        & background *:before,
+        & background *:after,
+        & foreground,
+        & foreground *,
+        & foreground *:before,
+        & foreground *:after {
+            /*transition-property: transform, opacity;*/
+            transition-property: transform, width, height, border-radius, opacity;
+            transition-duration: .25s;
+            transition-timing-function: linear;
+            will-change: scroll-position;
+        }
+    }
+    about {
+        max-width: 50%;
+    }
+    page:not(#page-0000), abouttext {
+        &:before, &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &:before {
+            z-index: -1;
+            transform: rotate(-.5deg);
+            background: rgba(245,245,245,.95);
+            top: 0;
+            left: 0;
+        }
+        &:after {
+            background: rgba(0,0,0,0.1);
+            z-index: -2;
+            top: 2em;
+            left: 2em;
+            transform: rotate(2deg);
+        }
+        &, &:before, &:after {
+            border-radius: 1em;
+        }
+    }
+    page:not(#page-0000):nth-of-type(even), abouttext {
+        &:before {
+            transform: rotate(.5deg);
+        }
+        &:after {
+            transform: rotate(-2deg);
+        }
+    }
+}
+@media (orientation:portrait) {
+    text {
+        margin-top: 50vh;
+    }
+    body {
+        background: $body;
+    }
+    page:not(#page-0000), abouttext {
+        background: #fff;
+        border-radius: 1em;
+    }
+    page#pagex {
+        border-radius: 1em 1em 0 0;
+    }
+    page {
+        opacity: 1;
+        transform: rotateX(0deg) translate3d(0,0,0);
+        transition: all .5s ease-in-out .25s;
+        transform-origin: 0 100%;
+    }
+    page[inview="no"] {
+        opacity: 0;
+        transform: rotateX(180deg) translate3d(0,0,0);
+    }
+}

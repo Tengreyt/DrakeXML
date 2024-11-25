@@ -1,0 +1,118 @@
+﻿// page-2
+// page-2
+// page-2
+
+
+
+[page="0002"] picture > i:before{
+    padding-top:100%;
+    position:relative;
+}
+
+//background
+
+[page="0002"] {
+
+ & background > * {
+        opacity: .8;
+                transform:scale(1.1);
+    }
+
+    & background .bi0 i:nth-of-type(1) {
+        width: 100%;
+        height: 70em;
+        background: #B9B3A7;
+        transform: translateZ(-10px);
+    }
+
+        & background .bi0 i:nth-of-type(1):before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5F3D6F, rgba(0,0,0,0) );
+            opacity: 1;
+        }
+
+        & background .bi0 i:nth-of-type(1):after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5fadaf,#f39e66,#B56554, rgba(0,0,0,0) );
+            opacity: 0;
+        }
+
+    & background .bi1 i, & background .bi1 i:before, & background .bi1 i:after {
+        background: #453541;
+    }
+}
+
+[page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
+    & background .bi0 {
+        opacity: .7;
+    }
+
+        & background .bi0 i:not(:nth-of-type(1)), & background .bi0 i:not(:nth-of-type(1)):before, & background .bi0 i:not(:nth-of-type(1)):after {
+            background: $horizon;
+            border-radius: 50%;
+        }
+        //horizon
+        & background .bi0 i:nth-of-type(2) {
+            width: calc(100% + 100em);
+            height: 50%;
+            transform: translate(-50em,58em) translateZ(-1px);
+            border-radius: 0;
+        }
+
+        & background .bi0 i:nth-of-type(3) {
+            width: 10em;
+            height: 11em;
+            transform: translate(0em,50em);
+            box-shadow: -8em 1.5em 0 $horizon, 7em 1em 0 $horizon, 15em 1.5em 0 $horizon, 20em -1em 0 $horizon, 27em 1em 0 $horizon, 32em 1em 0 $horizon, 40em 1em 0 $horizon, 45em .5em 0 $horizon;
+        }
+
+            & background .bi0 i:nth-of-type(3):before {
+                width: 10em;
+                height: 11em;
+                transform: translate(60em,0em);
+                box-shadow: -8em 1.5em 0 $horizon, 7em 2em 0 $horizon, 15em 1.5em 0 $horizon, 20em 1em 0 $horizon, 27em 0 0 $horizon, 32em .5em 0 $horizon, 40em 1em 0 $horizon, 45em .5em 0 $horizon;
+            }
+
+            & background .bi0 i:nth-of-type(3):after {
+                width: 10em;
+                height: 11em;
+                transform: translate(120em,0em);
+                box-shadow: -8em 1.5em 0 $horizon, 7em 1em 0 $horizon, 15em 1.5em 0 $horizon, 20em 3em 0 $horizon, 27em 1.2em 0 $horizon, 32em .5em 0 $horizon, 40em 1.2em 0 $horizon, 45em .5em 0 $horizon;
+            }
+
+        & background .bi0 i:nth-of-type(4) {
+            width: 10em;
+            height: 11em;
+            transform: translate(180em,50em);
+            box-shadow: -8em 1.5em 0 $horizon, 7em 1em 0 $horizon, 15em 1.5em 0 $horizon, 20em -1em 0 $horizon, 27em 1em 0 $horizon, 32em 1em 0 $horizon, 40em 1em 0 $horizon, 45em .5em 0 $horizon;
+        }
+
+            & background .bi0 i:nth-of-type(4):before {
+                width: 10em;
+                height: 11em;
+                transform: translate(60em,0em);
+                box-shadow: -8em 1.5em 0 $horizon, 7em 2em 0 $horizon, 15em 1.5em 0 $horizon, 20em 1em 0 $horizon, 27em 0 0 $horizon, 32em .5em 0 $horizon, 40em 1em 0 $horizon, 45em .5em 0 $horizon;
+            }
+
+            & background .bi0 i:nth-of-type(4):after {
+                width: 10em;
+                height: 11em;
+                transform: translate(120em,0em);
+                box-shadow: -8em 1.5em 0 $horizon, 7em 1em 0 $horizon, 15em 1.5em 0 $horizon, 20em 3em 0 $horizon, 27em 1.2em 0 $horizon, 32em .5em 0 $horizon, 40em 1.2em 0 $horizon, 45em .5em 0 $horizon;
+            }
+}
+
+//
+//
+//
+//
+
+//foreground
+[page="0002"], [page="0003"], [page="0004"] {
+    & foreground i {
+        /*box-shadow: inset 0px 0px 0rgba(0,0,0,0);*/
+        transform: scale(2) translateY(10vh);
+    }
+}
