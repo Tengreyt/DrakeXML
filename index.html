@@ -12,15 +12,35 @@
 </head>
 <body class="rfont pageload" page="0000">
   <about>
-    <a href="javascript:void(0)" title="About Deman Drawkcab">i</a>
-    <a href="javascript:void(0)" title="Dismiss">&#10005;</a>
+    <a href="#" title="About Deman Drawkcab">i</a>
+    <a href="#" title="Dismiss">&#10005;</a>
     <abouttext class="p-x-2 p-y-1 relative m-t-3 m-x-1">
       <h4>Как это делал</h4>
       <p>
-        Эта история проиллюстрирована только с помощью HTML CSS JS(jQuery). Каждая картинка создана из слоёв HTML. HTML-элементы, которые обычно имеют прямоугольную форму, были растянуты, перекошены, повернуты под углом и закруглены, чтобы создать иллюстрации для каждой страницы. «Платонические приключения Дрейка» полностью нарисованы с помощью CSS. Как проходит его жизнь в парарельном реальности
+        Эта история проиллюстрирована только с помощью HTML CSS(Scss) JS(jQuery). Каждая картинка создана из слоёв HTML. HTML-элементы, которые обычно имеют прямоугольную форму, были растянуты, перекошены, повернуты под углом и закруглены, чтобы создать иллюстрации для каждой страницы. «Приключения сквозь эпохи Дрейка» полностью нарисованы с помощью SCSS. Как проходит его жизнь в парарельном реальности
       </p>
     </abouttext>
   </about>
+  <!-- player -->
+  <div class="player">
+    <audio id="audioPlayer" src="./assets/audio/Rush Garcia — Take to the Sky (A How to Train Your Dragon Orchestration) (www.lightaudio.ru).mp3" preload="auto" loop></audio>
+    <div id="info" class="info">
+      <span class="artist">Taramov</span>
+      <span class="name">Khalid</span>
+      <div class="progress-bar">
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div id="control-panel" class="control-panel">
+      <div class="album-art"></div>
+      <div class="controls">
+        <div class="prev" id="prev"></div>
+        <div id="play" class="play"></div>
+        <div class="next" id="next"></div>
+      </div>
+    </div>
+  </div>
+  <!-- // player -->
   <row>
     <background class="responsiveem abs-center d-block">
       <div>
@@ -179,7 +199,7 @@
   </row>
   <column class="col-2 flex-end p-x-1 p-t-1 flex">
     <text>
-      <page id="page-0013" class="relative p-t-2 p-x-2 p-b-1 m-b-3">
+      <page id="page-0013" class="relative p-t-2 p-x-2 p-b-1 m-b-3 m-t-5">
         <p>
           Вдруг Дрейк почувствовал странное притяжение, и в одно мгновение он оказался посреди шумной улицы Лондона 1941 года. Воздух был пропитан запахом дыма, а вдали слышались сирены. Он огляделся, смущенный видом солдат, марширующих по улице, и гражданских лиц, спешащих в укрытия.
         </p>

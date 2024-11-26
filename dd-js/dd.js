@@ -54,3 +54,136 @@ function topmargin() {
 }
 $(document).ready(topmargin); // Выполняем функцию при загрузке документа
 $(window).resize(topmargin); // Перевыполняем функцию при изменении размера окна
+
+
+
+console.clear();
+
+class musicPlayer {
+  constructor() {
+    this.play = this.play.bind(this);
+    this.playBtn = document.getElementById('play');
+    this.playBtn.addEventListener('click', this.play);
+    this.controlPanel = document.getElementById('control-panel');
+    this.infoBar = document.getElementById('info');
+  }
+
+  play() {
+    const controlPanelObj = this.controlPanel;
+    const infoBarObj = this.infoBar;
+    
+    if (!controlPanelObj.classList.contains('active')) {
+      controlPanelObj.classList.add('active');
+    } else {
+      controlPanelObj.classList.remove('active');
+    }
+    
+    if (!infoBarObj.classList.contains('active')) {
+      infoBarObj.classList.add('active');
+    } else {
+      infoBarObj.classList.remove('active');
+    }
+  }
+}
+
+const newMusicPlayer = new musicPlayer();
+
+const audio = document.getElementById('audioPlayer');
+const playButton = document.getElementById('play');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const progressBar = document.querySelector('.progress-bar .bar');
+
+// Установка начальной громкости (20%)
+audio.volume = 0.2; // Установите значение от 0.0 до 1.0
+
+// Функция для воспроизведения/паузы музыки
+playButton.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play().catch(error => {
+      console.error('Ошибка при воспроизведении:', error);
+    });
+    playButton.classList.add('active');
+  } else {
+    audio.pause();
+    playButton.classList.remove('active');
+  }
+});
+
+// Обновление прогресс-бара
+audio.addEventListener('timeupdate', () => {
+  const percentage = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = percentage + '%';
+});
+
+// Функция для предыдущей песни (можно добавить логику)
+prevButton.addEventListener('click', () => {
+  // Логика для перехода к предыдущей песне
+});
+
+// Функция для следующей песни (можно добавить логику)
+nextButton.addEventListener('click', () => {
+  // Логика для перехода к следующей песне
+});
+
+// Автозапуск аудио через 5 секунд
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    audio.play().catch(error => {
+      console.error('Ошибка при автозапуске:', error);
+    });
+  }, 5000); // Запуск аудио через 5 секунд
+});
+
+  
+
+// ======================================================================
+// document.addEventListener('DOMContentLoaded', () => {
+//     let mousePos = { x: -1, y: -1 };
+  
+//     // Функция для получения случайного числа в заданном диапазоне
+//     function getRandomInt(min, max) {
+//       return Math.round(Math.random() * (max - min)) + min;
+//     }
+  
+//     // Обработчик движения мыши
+//     window.addEventListener('mousemove', (e) => {
+//       mousePos.x = e.pageX;
+//       mousePos.y = e.pageY;
+//     });
+  
+//     // Обработчик ухода мыши за пределы окна
+//     window.addEventListener('mouseleave', () => {
+//       mousePos.x = -1;
+//       mousePos.y = -1;
+//     });
+  
+//     // Интервал для создания элементов
+//     setInterval(() => {
+//       if (mousePos.x > 0 && mousePos.y > 0) {
+//         const range = 15;
+  
+//         // Генерация стиля элемента
+//         const color = `background: rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)});`;
+//         const sizeInt = getRandomInt(10, 30);
+//         const size = `height: ${sizeInt}px; width: ${sizeInt}px;`;
+//         const left = `left: ${getRandomInt(mousePos.x - range - sizeInt, mousePos.x + range)}px;`;
+//         const top = `top: ${getRandomInt(mousePos.y - range - sizeInt, mousePos.y + range)}px;`;
+  
+//         const style = `${left} ${top} ${color} ${size}`;
+  
+//         // Создание и добавление элемента в DOM
+//         const ball = document.createElement('div');
+//         ball.className = 'ball';
+//         ball.style.cssText = style;
+  
+//         document.getElementById('wrap').appendChild(ball);
+  
+//         // Удаление элемента после завершения анимации
+//         ball.addEventListener('animationend', () => {
+//           ball.remove();
+//         });
+//       }
+//     }, 1);
+//   });
+  
