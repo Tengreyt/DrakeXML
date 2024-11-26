@@ -93,7 +93,7 @@ const nextButton = document.getElementById('next');
 const progressBar = document.querySelector('.progress-bar .bar');
 
 // Установка начальной громкости (5%)
-audio.volume = 0.02; // Установите значение от 0.0 до 1.0
+audio.volume = 0.8; // Установите значение от 0.0 до 1.0
 
 // Функция для воспроизведения/паузы музыки
 playButton.addEventListener('click', () => {
@@ -158,13 +158,16 @@ window.addEventListener('load', () => {
  });
 
  // Закрытие модального окна при клике вне его
- window.addEventListener('click', (event) => {
-   if (event.target === modal) {
-     modal.style.display = 'none';
-     audioPlayers.pause();
-     audioPlayers.currentTime = 0;
-   }
- });
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+    audioPlayers.pause();
+    audioPlayers.currentTime = 0;
+  }
+});
+
+
+
 
   
 

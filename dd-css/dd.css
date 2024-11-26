@@ -5016,7 +5016,7 @@ body:not([scrolling="true"])[page="0007"] foreground i i:nth-of-type(6), body:no
   left: 10px;
   right: 10px;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 5px 15px 5px 110px;
+  padding: 5px 15px 5px 90px;
   border-radius: 15px;
   transition: all 0.5s ease;
 }
@@ -5026,7 +5026,6 @@ body:not([scrolling="true"])[page="0007"] foreground i i:nth-of-type(6), body:no
 .player .info .artist {
   color: #222;
   font-size: 16px;
-  margin-bottom: 5px;
 }
 .player .info .name {
   color: #999;
@@ -5237,4 +5236,50 @@ body:not([scrolling="true"])[page="0007"] foreground i i:nth-of-type(6), body:no
   right: 10px;
   font-size: 24px;
   cursor: pointer;
+}
+/* ================================================ */
+
+.clood {
+  margin: 20px 0px 40px 0px;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: inherit;
+  color: #fff;
+  overflow: hidden; /* Убираем скроллинг */
+}
+
+.content {
+  text-align: center;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Начинаем с прозрачности */
+  animation: fade-in 3s ease-in-out 2s forwards; /* Анимация появления */
+}
+
+.credits-text {
+  background-color: rgba(255, 255, 255, 0.7); /* Прозрачный фон */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Лёгкая рамка */
+  border-radius: 15px; /* Закругление углов */
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Эффект свечения */
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.credits-text p {
+  margin: 0.5rem 0;
+  color: #000;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1; /* Текст полностью проявляется */
+  }
 }
