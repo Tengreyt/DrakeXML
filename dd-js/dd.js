@@ -57,8 +57,6 @@ $(window).resize(topmargin); // Перевыполняем функцию при
 
 
 
-console.clear();
-
 class musicPlayer {
   constructor() {
     this.play = this.play.bind(this);
@@ -94,8 +92,8 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const progressBar = document.querySelector('.progress-bar .bar');
 
-// Установка начальной громкости (20%)
-audio.volume = 0.05; // Установите значение от 0.0 до 1.0
+// Установка начальной громкости (5%)
+audio.volume = 0.02; // Установите значение от 0.0 до 1.0
 
 // Функция для воспроизведения/паузы музыки
 playButton.addEventListener('click', () => {
