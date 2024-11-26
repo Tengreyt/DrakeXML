@@ -95,7 +95,7 @@ const nextButton = document.getElementById('next');
 const progressBar = document.querySelector('.progress-bar .bar');
 
 // Установка начальной громкости (20%)
-audio.volume = 0.2; // Установите значение от 0.0 до 1.0
+audio.volume = 0.05; // Установите значение от 0.0 до 1.0
 
 // Функция для воспроизведения/паузы музыки
 playButton.addEventListener('click', () => {
@@ -119,11 +119,13 @@ audio.addEventListener('timeupdate', () => {
 // Функция для предыдущей песни (можно добавить логику)
 prevButton.addEventListener('click', () => {
   // Логика для перехода к предыдущей песне
+  //  Потом напиши = ) 
 });
 
 // Функция для следующей песни (можно добавить логику)
 nextButton.addEventListener('click', () => {
   // Логика для перехода к следующей песне
+  //  Потом напиши = )  
 });
 
 // Автозапуск аудио через 5 секунд
@@ -134,6 +136,37 @@ window.addEventListener('load', () => {
     });
   }, 5000); // Запуск аудио через 5 секунд
 });
+
+
+ // Получаем элементы
+ const playsButton = document.querySelector('button');
+ const modal = document.getElementById('modal');
+ const closeModal = document.getElementById('closeModal');
+ const audioPlayers = document.getElementById('audioPlayers');
+
+
+
+ // Открытие модального окна и запуск аудио
+ playsButton.addEventListener('click', () => {
+   modal.style.display = 'flex';
+   audioPlayers.play();
+ });
+
+ // Закрытие модального окна
+ closeModal.addEventListener('click', () => {
+   modal.style.display = 'none';
+   audioPlayers.pause();
+   audioPlayers.currentTime = 0;
+ });
+
+ // Закрытие модального окна при клике вне его
+ window.addEventListener('click', (event) => {
+   if (event.target === modal) {
+     modal.style.display = 'none';
+     audioPlayers.pause();
+     audioPlayers.currentTime = 0;
+   }
+ });
 
   
 
